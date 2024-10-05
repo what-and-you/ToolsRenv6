@@ -22,7 +22,7 @@ check_password() {
     # Verifikasi input dengan password yang benar
     if [[ "$USER_INPUT" == "$CORRECT_PASSWORD" ]]; then
         echo "Password benar. anda di izinkan masuk ke dalam script"
-        sleep 1.5
+        sleep 2
         clear
         text="setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /secara kamu yang bernama save_password.txt jadi kamu jangan menghapus filenya nanti kalo di hapus di suruh masukin ulang password nya"
         for ((i=0; i<${#text}; i++)); do
