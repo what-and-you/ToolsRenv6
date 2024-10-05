@@ -9,8 +9,8 @@ check_password() {
     # Periksa apakah password sudah tersimpan di file
     if [[ -f "$PASSWORD_FILE" ]]; then
         PASSWORD=$(cat "$PASSWORD_FILE")
-        echo "Password sudah tersimpan. Tidak perlu input lagi."
-        sleep 1.5
+        echo "HALLOOO PENGGUNAA PREMIUM, SELAMAT DATANG DI TOOLSRENV6"
+        sleep 2
         return 0
     fi
 
@@ -23,10 +23,11 @@ check_password() {
     if [[ "$USER_INPUT" == "$CORRECT_PASSWORD" ]]; then
         echo "Password benar. anda di izinkan masuk ke dalam script"
         clear 
+        sleep 1.5
         text="setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /secara kamu yang bernama save_password.txt jadi kamu jangan menghapus filenya nanti kalo di hapus di suruh masukin ulang password nya"
         for ((i=0; i<${#text}; i++)); do
         echo -n "${text:$i:1}"
-        sleep 0.01
+        echo "pencet enter untuk melanjutkan"
     done
         read -p " "
         echo "$USER_INPUT" > "$PASSWORD_FILE"
@@ -56,7 +57,8 @@ show_menu() {
              / / / /_/ / /_/ / /______/ / _, _/ /___/ /|  / | |/ / /_/ / 
             /_/  \____/\____/_____/____/_/ |_/_____/_/ |_/  |___/\____/
             SCRIPT BY: REN9999
-            VERSION  : 6.0.0\033[0m"
+            VERSION  : 6.0.0
+            STATUS   : PREMIUM 👑\033[0m"
     echo
     echo
     echo
