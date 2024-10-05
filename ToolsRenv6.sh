@@ -1,14 +1,43 @@
 #!/bin/bash
 
-python3 ./password_p2.py
+# Nama file tempat menyimpan password
+PASSWORD_FILE="/sdcard/save_password.txt"
+CORRECT_PASSWORD="ren9999"
 
-if [[ $? -eq 0 ]]; then
-    echo "Melanjutkan eksekusi script..."
-else
-    echo "Menghentikan eksekusi script."
-    exit 1
-fi
+# Fungsi untuk memeriksa password
+check_password() {
+    # Periksa apakah password sudah tersimpan di file
+    if [[ -f "$PASSWORD_FILE" ]]; then
+        PASSWORD=$(cat "$PASSWORD_FILE")
+        echo "Password sudah tersimpan. Tidak perlu input lagi."
+        sleep 1.5
+        return 0
+    fi
 
+    # Jika file belum ada, minta input password pertama kali
+    echo -n "Masukkan password: "
+    read -s USER_INPUT
+    echo # Untuk membuat baris baru setelah input
+
+    # Verifikasi input dengan password yang benar
+    if [[ "$USER_INPUT" == "$CORRECT_PASSWORD" ]]; then
+        echo "Password benar. Menyimpan password ke file untuk digunakan nanti."
+        sleep 1.5
+        echo "$USER_INPUT" > "$PASSWORD_FILE"
+        return 0
+    else
+        echo "Password salah. Tidak menyimpan password."
+        sleep 1.5
+        return 1
+    fi
+}
+
+# Panggil fungsi untuk memeriksa password
+check_password || exit 1
+
+# Tambahkan perintah script Anda di sini
+echo "Ini adalah bagian dari script yang akan dieksekusi setelah password benar."
+sleep 1.5
 check_package() {
     if ! command -v $1 &> /dev/null; then
         echo "Paket '$1' belum diinstal."
