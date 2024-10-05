@@ -21,12 +21,14 @@ check_password() {
 
     # Verifikasi input dengan password yang benar
     if [[ "$USER_INPUT" == "$CORRECT_PASSWORD" ]]; then
-        echo "Password benar. Menyimpan password ke file untuk digunakan nanti."
-        sleep 1.5
+        echo "Password benar. anda di izinkan masuk ke dalam script"
+        clear 
+        echo "setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /secara kamu yang bernama save_password.txt jadi kamu jangan menghapus filenya nanti kalo di hapus di suruh masukin ulang password nya"
+        read -p " "
         echo "$USER_INPUT" > "$PASSWORD_FILE"
         return 0
     else
-        echo "Password salah. Tidak menyimpan password."
+        echo "Password salah. anda tidak di izinkan masuk!!! "
         sleep 1.5
         return 1
     fi
@@ -36,7 +38,6 @@ check_password() {
 check_password || exit 1
 
 # Tambahkan perintah script Anda di sini
-echo "Ini adalah bagian dari script yang akan dieksekusi setelah password benar."
 sleep 1.5
 check_package() {
     if ! command -v $1 &> /dev/null; then
