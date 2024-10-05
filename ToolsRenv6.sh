@@ -37,29 +37,6 @@ check_password() {
 # Panggil fungsi untuk memeriksa password
 check_password || exit 1
 
-# Tambahkan perintah script Anda di sini
-sleep 1.5
-check_package() {
-    if ! command -v $1 &> /dev/null; then
-        echo "Paket '$1' belum diinstal."
-        read -p "Apakah Anda ingin menginstalnya? (y/n): " choice
-        if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
-            pkg install $1 -y
-        else
-            echo "Paket '$1' diperlukan untuk melanjutkan. Script dihentikan."
-            exit 1
-        fi
-    else
-        echo "Paket '$1' sudah diinstal."
-    fi
-}
-required_packages=("git" "curl" "python" "python2" "python3")
-
-for package in "${required_packages[@]}"; do
-    check_package $package
-done
-clear
-echo "Semua bahan telah diinstal. Melanjutkan script..."
 sleep 1.5
 clear
 trap_ctrl_c() {
