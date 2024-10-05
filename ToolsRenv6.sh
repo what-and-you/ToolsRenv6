@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 ./password_p.py
+python3 ./password_p2.py
 
 if [[ $? -eq 0 ]]; then
     echo "Melanjutkan eksekusi script..."
