@@ -1,5 +1,12 @@
 # 🗿🗿🗿🗿🗿
 
+# ppl
+# Ini adalah script untuk menghubungkan API dan melakukan verifikasi user
+# Dibuat oleh Ren Store, 2024
+
+def connect_api():
+    pass
+
 # cara install
 ```
 pkg update
