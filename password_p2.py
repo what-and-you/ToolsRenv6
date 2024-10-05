@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
 import os
-import getpass
 import sys
+import getpass
 
 # Nama file untuk menyimpan password
 PASSWORD_FILE = "save_password.txt"
+
+# Password default yang akan disimpan
+DEFAULT_PASSWORD = "ren9999"
 
 # Fungsi untuk menyimpan password ke file
 def save_password(password):
@@ -23,23 +26,11 @@ def load_password():
 saved_password = load_password()
 
 if saved_password:
-    # Jika password sudah disimpan, gunakan password yang tersimpan
-    user_input = getpass.getpass("Masukkan password: ")
-    if user_input == saved_password:
-        print("Password benar.")
-        sys.exit(0)  # Berhasil
-    else:
-        print("Password salah.")
-        sys.exit(1)  # Gagal
+    # Jika password sudah disimpan, tidak perlu minta input lagi
+    print("Password sudah tersimpan. Melanjutkan...")
+    sys.exit(0)  # Berhasil, password ditemukan
 else:
-    # Jika password belum disimpan, minta user memasukkan dan simpan ke file
-    user_input = getpass.getpass("Masukkan password untuk pertama kali: ")
-    confirm_password = getpass.getpass("Konfirmasi password: ")
-
-    if user_input == confirm_password:
-        save_password(user_input)
-        print("Password berhasil disimpan.")
-        sys.exit(0)  # Berhasil
-    else:
-        print("Password tidak cocok. Gagal menyimpan password.")
-        sys.exit(1)  # Gagal
+    # Jika password belum disimpan, simpan password default
+    save_password(DEFAULT_PASSWORD)
+    print(f"Password default '{DEFAULT_PASSWORD}' berhasil disimpan.")
+    sys.exit(0)  # Berhasil
