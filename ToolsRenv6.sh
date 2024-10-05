@@ -27,7 +27,7 @@ check_password() {
         text="setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /secara kamu yang bernama save_password.txt jadi kamu jangan menghapus filenya nanti kalo di hapus di suruh masukin ulang password nya"
         for ((i=0; i<${#text}; i++)); do
         echo -n "${text:$i:1}"
-        sleep 0.1
+        sleep 0.01
     done
     echo
     echo "pencet enter untuk melanjutkan"
