@@ -19,7 +19,6 @@ cd ToolsRenv6
 ```
 ```
 python ToolsRenv6_bash.py
-''`
 ```
 # cara update script
 ```
