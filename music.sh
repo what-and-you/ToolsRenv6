@@ -40,7 +40,8 @@ while true; do
             ;;
         3)
             python ToolsRenv6_2.py
-            show_menu
+            # Kembali ke menu musik
+            continue
             ;;
         *)
             echo "Pilihan gak valid, coba lagi."
