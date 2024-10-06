@@ -92,12 +92,8 @@ def install_bahan():
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
     
 def set_music():
-    try:
-        result = subprocess.run(['./music_menu'], check=True, capture_output=True, text=True)
-        print("Output:", result.stdout)
-    except subprocess.CalledProcessError as e:
-        print("Error:", e.stderr)
-
+    os.system('./music_menu')
+    
 # Main loop
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, trap_ctrl_c)
