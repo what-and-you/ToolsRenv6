@@ -109,7 +109,7 @@ if __name__ == "__main__":
             dorking2()
         elif choice == '3':
             install_bahan()
-        elif choise == '4':
+        elif choice == '4':
             set_music()
         elif choice == '5':
             print("Keluar dari script")
