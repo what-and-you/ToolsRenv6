@@ -1,6 +1,7 @@
-|4import os
+import os
 import time
 import signal
+import subprocess
 
 # Nama file tempat menyimpan password
 PASSWORD_FILE = "/sdcard/save_password.txt"
@@ -89,9 +90,13 @@ def install_bahan():
     os.system('pkg install python python2 python3')
     os.system('git clone https://github.com/SystemOfPekalongan/dorking-tools.git')
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
-
+    
 def set_music():
-    os.system('./music_menu') 
+    try:
+        result = subprocess.run(['./music_menu'], check=True, capture_output=True, text=True)
+        print("Output:", result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("Error:", e.stderr)
 
 # Main loop
 if __name__ == "__main__":
@@ -109,7 +114,7 @@ if __name__ == "__main__":
             dorking2()
         elif choice == '3':
             install_bahan()
-        elif choice == '4':
+        elif choice == '4':  # Perbaiki typo dari choise menjadi choice
             set_music()
         elif choice == '5':
             print("Keluar dari script")
