@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# Fungsi buat nampilin menu
+# Fungsi untuk menampilkan menu
 music_menu() {
     echo "1. Play Musik"
     echo "2. Stop Musik"
-    echo "3. kembali ke menu awal"
+    echo "3. Kembali ke menu awal"
 }
 
-# Fungsi buat milih musik dan play
+# Fungsi untuk memilih musik dan memainkannya
 play_musik() {
     echo "Masukkan nama file musik (lokasi di /sdcard):"
     read file_musik
     if [ -f "/sdcard/$file_musik" ]; then
         mpv "/sdcard/$file_musik" &
-        echo "Lagi muter: $file_musik"
+        echo "Lagi memutar: $file_musik"
     else
-        echo "File musik gak ada. Coba cek lagi."
+        echo "File musik tidak ditemukan. Coba cek lagi."
     fi
 }
 
-# Fungsi buat stop musik
+# Fungsi untuk menghentikan musik
 stop_musik() {
     pkill mpv
     echo "Musik berhenti."
@@ -39,12 +39,10 @@ while true; do
             stop_musik
             ;;
         3)
-            python ToolsRenv6_2.py
-            # Kembali ke menu musik
-            continue
+            exit 0  # Keluar dari script Bash dan kembali ke Python
             ;;
         *)
-            echo "Pilihan gak valid, coba lagi."
+            echo "Pilihan tidak valid, coba lagi."
             ;;
     esac
 done
