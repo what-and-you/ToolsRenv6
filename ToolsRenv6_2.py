@@ -1,4 +1,4 @@
-import os
+|4import os
 import time
 import signal
 
@@ -84,11 +84,14 @@ def dorking2():
 # Fungsi untuk menginstall bahan
 def install_bahan():
     os.system('pkg update && pkg upgrade')
-    os.system("sed -i 's/\\r$//' ToolsRenv6.sh")
+    os.system("sed -i 's/\\r$//' ToolsRenv6_bash.py")
     os.system('pkg install git')
     os.system('pkg install python python2 python3')
     os.system('git clone https://github.com/SystemOfPekalongan/dorking-tools.git')
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
+
+def set_music():
+    os.sytem('./music_menu') 
 
 # Main loop
 if __name__ == "__main__":
@@ -107,7 +110,7 @@ if __name__ == "__main__":
         elif choice == '3':
             install_bahan()
         elif choise == '4':
-            ./music_menu()
+            set_music()
         elif choice == '5':
             print("Keluar dari script")
             time.sleep(1.5)
