@@ -13,32 +13,34 @@ def check_password():
     if os.path.exists(PASSWORD_FILE):
         with open(PASSWORD_FILE, 'r') as file:
             password = file.read().strip()
-        print("HALLOOO PENGGUNAA PREMIUM, SELAMAT DATANG DI TOOLSRENV6")
-        time.sleep(2)
-        return True
-
-    # Jika file belum ada, minta input password pertama kali
+        if password == CORRECT_PASSWORD:
+            print("HALLOOO PENGGUNAA PREMIUM, SELAMAT DATANG DI TOOLSRENV6")
+            time.sleep(2)
+            return True
+        else:
+            print("Password di file salah. Silakan masukkan ulang.")
+    
+    # Jika file belum ada atau password salah, minta input password pertama kali
     user_input = input("Masukkan password: ")
 
     # Verifikasi input dengan password yang benar
     if user_input == CORRECT_PASSWORD:
-        print("Password benar. anda di izinkan masuk ke dalam script")
+        print("Password benar. Anda diizinkan masuk ke dalam script")
         time.sleep(2)
         os.system('clear')
-        text = ("setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /sdcard  kamu"
-                "yang bernama save_password.txt"
-                "jadi kamu jangan menghapus filenya nanti kalo di hapus "
-                "nanti di suruh masukin ulang password nya")
+        text = ("Setelah kamu berhasil memasukkan password, akan otomatis membuat file di /sdcard "
+                "yang bernama save_password.txt. Jadi jangan hapus filenya, "
+                "karena jika dihapus, nanti kamu akan diminta memasukkan ulang password.")
         for char in text:
             print(char, end='', flush=True)
             time.sleep(0.01)
-        print("\nPencet enter untuk melanjutkan")
+        print("\nTekan Enter untuk melanjutkan")
         input()
         with open(PASSWORD_FILE, 'w') as file:
             file.write(user_input)
         return True
     else:
-        print("Password salah. anda tidak di izinkan masuk!!!")
+        print("Password salah. Anda tidak diizinkan masuk!")
         time.sleep(1.5)
         return False
 
@@ -58,7 +60,7 @@ def show_menu():
     print("            /_/  \\____/\\____/_____/____/_/ |_/_____/_/ |_/  |___/\\____/")
     print("            SCRIPT BY: REN9999")
     print("            VERSION  : 6.0.0")
-    print("            STATUS   : PREMIUM ðŸ‘‘\033[0m\n")
+    print("            STATUS   : PREMIUM \033[0m\n")
     
     text = ("            1.dorking 1\n"
             "            2.dorking 2\n"
@@ -90,10 +92,11 @@ def install_bahan():
     os.system('pkg install python python2 python3')
     os.system('git clone https://github.com/SystemOfPekalongan/dorking-tools.git')
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
-    
+
+# Fungsi untuk mengatur musik
 def set_music():
     os.system('./music_menu')
-    
+
 # Main loop
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, trap_ctrl_c)
@@ -110,12 +113,12 @@ if __name__ == "__main__":
             dorking2()
         elif choice == '3':
             install_bahan()
-        elif choice == '4':  # Perbaiki typo dari choise menjadi choice
-            set_music()
+        elif choice == '4':
+            set_music()  # Memanggil fungsi set_music untuk menjalankan script Bash
         elif choice == '5':
             print("Keluar dari script")
             time.sleep(1.5)
             break
         else:
-            print("Pilih yang bener bangg")
+            print("Pilih yang benar bang!")
             time.sleep(1)
