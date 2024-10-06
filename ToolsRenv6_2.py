@@ -72,7 +72,7 @@ def show_menu():
         time.sleep(0.02)
     print("\n")
     time.sleep(1.5)
-    print("â•­â”€â”€â”€â‰¼TOOLSRENV6â€¢~/PILIH MENUâ‰½\nâ•°â”€â”€â•¼âœ  ", end="")
+    print("pilih menu ", end="")
 
 # Fungsi untuk menjalankan dorking1
 def dorking1():
