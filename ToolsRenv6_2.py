@@ -91,7 +91,7 @@ def install_bahan():
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
 
 def set_music():
-    os.sytem('./music_menu') 
+    os.system('./music_menu') 
 
 # Main loop
 if __name__ == "__main__":
