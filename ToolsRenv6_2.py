@@ -9,48 +9,40 @@ CORRECT_PASSWORD = "ren9999"
 
 # Fungsi untuk memeriksa password
 def check_password():
-    # Periksa apakah password sudah tersimpan di file
     if os.path.exists(PASSWORD_FILE):
         with open(PASSWORD_FILE, 'r') as file:
             password = file.read().strip()
-        if password == CORRECT_PASSWORD:
-            print("HALLOOO PENGGUNAA PREMIUM, SELAMAT DATANG DI TOOLSRENV6")
-            time.sleep(2)
-            return True
-        else:
-            print("Password di file salah. Silakan masukkan ulang.")
-    
-    # Jika file belum ada atau password salah, minta input password pertama kali
-    user_input = input("Masukkan password: ")
+        print("HALLOOO PENGGUNAA PREMIUM, SELAMAT DATANG DI TOOLSRENV6")
+        time.sleep(2)
+        return True
 
-    # Verifikasi input dengan password yang benar
+    user_input = input("Masukkan password: ")
     if user_input == CORRECT_PASSWORD:
-        print("Password benar. Anda diizinkan masuk ke dalam script")
+        print("Password benar. anda di izinkan masuk ke dalam script")
         time.sleep(2)
         os.system('clear')
-        text = ("Setelah kamu berhasil memasukkan password, akan otomatis membuat file di /sdcard "
-                "yang bernama save_password.txt. Jadi jangan hapus filenya, "
-                "karena jika dihapus, nanti kamu akan diminta memasukkan ulang password.")
+        text = ("setelah kamu berhasil memasukan password, nanti akan otomatis membuat file di /sdcard  kamu"
+                "yang bernama save_password.txt"
+                "jadi kamu jangan menghapus filenya nanti kalo di hapus "
+                "nanti di suruh masukin ulang password nya")
         for char in text:
             print(char, end='', flush=True)
             time.sleep(0.01)
-        print("\nTekan Enter untuk melanjutkan")
+        print("\nPencet enter untuk melanjutkan")
         input()
         with open(PASSWORD_FILE, 'w') as file:
             file.write(user_input)
         return True
     else:
-        print("Password salah. Anda tidak diizinkan masuk!")
+        print("Password salah. anda tidak di izinkan masuk!!!")
         time.sleep(1.5)
         return False
 
-# Fungsi untuk menangani Ctrl+C
 def trap_ctrl_c(signum, frame):
     print("\nAnda menekan Ctrl + C, kembali ke menu utama...")
     time.sleep(1.5)
     show_menu()
 
-# Fungsi untuk menampilkan menu
 def show_menu():
     os.system('clear')
     print("\033[0;35m               __________  ____  __   _____ ____  _______   ___    _______")
@@ -60,7 +52,7 @@ def show_menu():
     print("            /_/  \\____/\\____/_____/____/_/ |_/_____/_/ |_/  |___/\\____/")
     print("            SCRIPT BY: REN9999")
     print("            VERSION  : 6.0.0")
-    print("            STATUS   : PREMIUM \033[0m\n")
+    print("            STATUS   : PREMIUM ðŸ‘‘\033[0m\n")
     
     text = ("            1.dorking 1\n"
             "            2.dorking 2\n"
@@ -74,17 +66,14 @@ def show_menu():
     time.sleep(1.5)
     print("â•­â”€â”€â”€â‰¼TOOLSRENV6â€¢~/PILIH MENUâ‰½\nâ•°â”€â”€â•¼âœ  ", end="")
 
-# Fungsi untuk menjalankan dorking1
 def dorking1():
     os.chdir('dorking-tools')
     os.system('python dork.py')
 
-# Fungsi untuk menjalankan dorking2
 def dorking2():
     os.chdir('XGDork')
     os.system('python XGDork.py')
 
-# Fungsi untuk menginstall bahan
 def install_bahan():
     os.system('pkg update && pkg upgrade')
     os.system("sed -i 's/\\r$//' ToolsRenv6_bash.py")
@@ -92,12 +81,17 @@ def install_bahan():
     os.system('pkg install python python2 python3')
     os.system('git clone https://github.com/SystemOfPekalongan/dorking-tools.git')
     os.system('git clone https://github.com/E4rr0r4/XGDork.git')
-
-# Fungsi untuk mengatur musik
+    
 def set_music():
-    os.system('./music_menu')
+    while True:
+        # Menjalankan script music_menu dan menunggu input dari pengguna
+        os.system('./music_menu')
+        
+        # Tanya kepada pengguna apakah ingin kembali ke menu utama
+        kembali = input("Apakah Anda ingin kembali ke menu utama? (y/n): ")
+        if kembali.lower() == 'y':
+            break  # Keluar dari loop dan kembali ke menu utama
 
-# Main loop
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, trap_ctrl_c)
     
@@ -114,11 +108,11 @@ if __name__ == "__main__":
         elif choice == '3':
             install_bahan()
         elif choice == '4':
-            set_music()  # Memanggil fungsi set_music untuk menjalankan script Bash
+            set_music()  # Menjalankan set_music
         elif choice == '5':
             print("Keluar dari script")
             time.sleep(1.5)
             break
         else:
-            print("Pilih yang benar bang!")
+            print("Pilih yang bener bangg")
             time.sleep(1)
