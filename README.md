@@ -1,4 +1,4 @@
-# 🗿🗿🗿🗿🗿
+gw masih pemula bang 🗿👍
 
 # cara install
 ```
