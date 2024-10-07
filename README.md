@@ -34,5 +34,8 @@ python ToolsRenv6_bash.py
 ```
 sed -i 's/\r//' ToolsRenv6_bash.py
 ```
+```
+python ToolsRenv6_bash.py
+```
 
 <h6>passworld?: langsung chat gw aja</h6><a href="https://wa.me/6289519450908">klik di sini nanti langsung di arahkan ke wa gw</a>
