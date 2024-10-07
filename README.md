@@ -35,4 +35,4 @@ python ToolsRenv6_bash.py
 sed -i 's/\r//' ToolsRenv6_bash.py
 ```
 
-<h6>pw:ren9999</h6>
+<h6>passworld?: langsung chat gw aja</h6><a>https://wa.me/6289519450908>klik di sini</a>
