@@ -51,6 +51,7 @@ update_repo() {
 
 # Panggil fungsi update_repo
 update_repo
+sleep 1.5
 
 # Lanjutkan dengan eksekusi skrip lainnya...
 
