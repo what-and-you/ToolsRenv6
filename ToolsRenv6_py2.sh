@@ -46,6 +46,7 @@ update_repo() {
             echo "Repositori sudah terbaru."
         fi
     fi
+   slelep 1.5
 }
 
 # Panggil fungsi update_repo
