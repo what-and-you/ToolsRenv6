@@ -27,7 +27,7 @@ sleep 2
 
 
 # Fungsi untuk memperbarui repositori
-update_repo() {
+function update_repo() {
     if [ ! -d "$LOCAL_DIR" ]; then
         echo "Mengkloning repositori..."
         git clone "$REPO_URL" "$LOCAL_DIR"
@@ -111,6 +111,7 @@ trap_ctrl_c() {
 update_repo
 sleep 1.5
 clear
+
 show_menu() {
     clear
     echo -e "\033[1;92m
