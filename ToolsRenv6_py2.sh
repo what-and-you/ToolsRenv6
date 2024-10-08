@@ -50,8 +50,7 @@ update_repo() {
 }
 
 # Panggil fungsi update_repo
-update_repo
-sleep 1.5
+
 
 # Lanjutkan dengan eksekusi skrip lainnya...
 
@@ -109,6 +108,9 @@ trap_ctrl_c() {
     show_menu
 }
 
+update_repo
+sleep 1.5
+clear
 show_menu() {
     clear
     echo -e "\033[1;92m
