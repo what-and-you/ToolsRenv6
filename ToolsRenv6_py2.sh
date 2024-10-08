@@ -102,15 +102,16 @@ else
     nama_user=$(cat "$FILE")
 fi
 
+update_repo
+sleep 1.5
+clear
+
+
 trap_ctrl_c() {
     echo -e "\nAnda menekan Ctrl + C, kembali ke menu utama..."
     sleep 1.5
     show_menu
 }
-
-update_repo
-sleep 1.5
-clear
 
 show_menu() {
     clear
