@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Seru di Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            background: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #f39c12;
+            margin: 0;
+        }
+
+        /* Teks bergerak */
+        .welcome-text {
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+            background: #1abc9c;
+            padding: 10px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .welcome-text p {
+            animation: slide 10s linear infinite;
+            margin: 0;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .game-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .game-card {
+            background: #444;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            width: 600px; /* Ukuran kotak diperbesar */
+            height: 450px; /* Ukuran kotak diperbesar */
+            position: relative;
+        }
+
+        .game-card iframe {
+            border: none;
+            width: 100%;
+            height: 90%;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .game-card iframe:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Tombol fullscreen */
+        .fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 15px;
+            background: #f39c12;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .fullscreen-btn:hover {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>sini woy mampir dulu, cobain game nya🗿🔪</h1>
+        <p>lu jangan samoe bilang inj gane bocil🗿, cobain aja dulu🗿!</p>
+    </header>
+
+    <!-- Teks Bergerak untuk Sambutan -->
+    <div class="welcome-text">
+        <p>Selamat datang di website Game Seru! Dikelola oleh REN9999. Nikmati permainannya!</p>
+    </div>
+
+      <div class="game-section">
+        <!-- Game 1: Teka-Teki -->
+        <div class="game-card">
+            <h3>ini game nya random banget co🗿</h3>
+            <iframe src="https://www.freeonlinegames.com/embed/2049" title="Teka-Teki Game"></iframe>
+        </div>
+
+        <!-- Game 3: Penembak UFO -->
+        <div class="game-card">
+            <h3>Penembak UFO, jangan lupa pepengsot epep nya bang🗿</h3>
+            <iframe src="https://www.crazygames.com/embed/space-shooter" title="Penembak UFO"></iframe>
+        </div>
+    </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2024 Semua Hak Dilindungi. Design oleh REN9999</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk memulai layar penuh saat tombol ditekan
+        function toggleFullscreen(btn) {
+            var iframe = btn.previousElementSibling;
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
